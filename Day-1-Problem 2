@@ -1,0 +1,50 @@
+Problem Statement:
+
+Chef is standing at coordinate AA while Chefina is standing at coordinate BB.
+
+In one step, Chef can increase or decrease his coordinate by at most KK.
+
+Determine the minimum number of steps required by Chef to reach Chefina.
+
+
+
+Solution:
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc=new Scanner(System.in);
+		int t= sc.nextInt();
+		for(int i=0;i<t;i++){
+		    int X=sc.nextInt();
+		    int Y=sc.nextInt();
+		    int K=sc.nextInt();
+		  
+		    int steps=0;
+		    while(X!=Y){
+		        if(Y-X>K){
+		            steps++;
+		            X+=K;
+		        }
+		        else if(X-Y>K){
+		            steps++;
+		            X-=K;
+		        }
+		        else{
+		            steps++;
+		            X=Y;
+		        }
+		    }
+		    System.out.println(steps);
+		}
+	}
+}
